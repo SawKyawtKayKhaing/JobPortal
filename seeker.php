@@ -18,6 +18,7 @@
 </style>
 </head>
 <body>
+    <div class="container">
     <h2>CV Form</h2>
     <img src="job-portal.jpg" class="float-right" alt="Job Seeker" width="600" height="500"> 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
@@ -92,6 +93,7 @@
                 <input type="text" name="pos" id="pp">
             </div>
     </div>
+
     <div class="form-group row">
     <label for="gg" class="col-sm-1 col-form-label">Gender:</label>
         <div class="col-sm-10">
@@ -111,8 +113,9 @@
     <footer>
   <p>About Job Seeker</p>
 </footer>
-</form>
 
+</form>
+</div>
 <?php include 'seekfunction.php' ;
 
 
@@ -153,8 +156,8 @@
             die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "INSERT INTO seeker (name, phone,address,nrc,email,city,education,skill,experience,position)
-            VALUES ('$name', '$phone', '$address','$nrc','$email','$city','$education','$skill','$experience','$position')";
+            $sql = "INSERT INTO seeker (name, phone,address,nrc,email,city,education,skill,experience,position,gender)
+            VALUES ('$name', '$phone', '$address','$nrc','$email','$city','$education','$skill','$experience','$position','$gender')";
 
             if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";

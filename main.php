@@ -7,17 +7,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+function myFunction() {
+  alert("Welcome! This is new employee list");
+}
+</script>
 
     
 </head>
     <title>Document</title>
 </head>
-<body >
+<body style="background-image:url('jobportal.png');background-repeat:no-repeat;background-size:cover;">
     <h2>Online Job Portal System</h2><br><br>
-        <a href="register.php"class="btn btn-outline-info" role="button">Job Seeker</a>&nbsp;&nbsp;
-        <a href="sinfo.php"class="btn btn-outline-secondary" role="button"> Seeker List</a>&nbsp;&nbsp;
-        <a href="Job_Provider.php" class="btn btn-outline-success" role="button">Job Provider</a>
-        <img src="download.jpg" class="float-right" alt="Job Portal" width="800" height="500"> 
+        <a href="register.php"class="btn btn-outline-info" role="button">Job Seeker</a>&nbsp;
+        <a href="sinfo.php"class="btn btn-outline-secondary" role="button"> Seeker List</a>&nbsp;
+        <a href="Job_Provider.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
+        <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
+        <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
          
 </body>
 </html>

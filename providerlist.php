@@ -37,7 +37,7 @@
     <h2>Job Provider List</h2><br>
     <table class="table ">
         <thead >
-            <tr class="table-active">
+            <tr class="table-success">
             <th>Name</th>
             <th>Type of Company</th>
             <th>City</th>
@@ -46,14 +46,15 @@
             <th>Experience</th>
             <th>Age</th>
             <th>Gender</th>
+            <th>SeekId</th>
             </tr>
         </thead>
         <tbody>
-            <?php
+        <?php
                     foreach($arrlist as $arraylist)
                     {
                         echo '<tr>';
-                            foreach($arraylist as $info)
+                            foreach((array)$arraylist as $info)
                             {
                                 echo '<td>'.$info.'</td>'."\t";
                             }

@@ -1,24 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <title>Document</title>
+  <style>
+table {
+  border-collapse: collapse;
+  width:50%;
+}
 
+th, td {
+  text-align: left;
+  padding: 3px;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}
+</style>
+</head>
+<body>
+  
+</body>
+</html>
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname ="onlinejobportal";                     
+$dbname ="job";                     
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection Error");
 }
 
-$sql = "SELECT seeker.name,seeker.address,seeker.position from seeker,jobportal where seeker.position = jobportal.JobVacancy and seeker.experience = jobportal.Experience5;";
+$sql = "SELECT seeker.name,seeker.address,provider.cname,seeker.position,provider.city from seeker,provider where seeker.position = provider.job_vacancy and seeker.experience = provider.experience ;";
+echo "<table><thead><tr ><th>Name</th><th>Address</th><th>Position</th><th>Company Name</th><th>City</th></tr></thead><tbody>";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "Name:". $row['seeker.name']. "Address:" . $row['seeker.address']. "Position:".$row['seeker.position']. "<br>";
+    echo "<tr>"."<td>". $row["name"]. "</td>"."<td>". $row["address"]."</td>". "<td>".$row["position"]."</td>"."<td>".$row["cname"]."</td>"."<td>".$row["city"]."</td>"."</tr>"."<br>";
+    
   
   }
+  echo "</table>";
 } else {
   echo "0 results";
 }

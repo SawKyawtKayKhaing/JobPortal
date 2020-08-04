@@ -1,14 +1,4 @@
-{"Name":"Green Hacker","TypeofCompany":"IT","City":"Yongon","Jobvacancy":"Developer","Salary":"300000",
-,"Experience":"1 Year","Age":"23","Gender":"Male"}
-{"Name":"Trust Score","TypeofCompany":"IT","City":"Yongon","Jobvacancy":"Developer","Salary":"300000",
-,"Experience":"1 Year","Age":"23","Gender":"Female"}
-{"Name":"Innowave","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"600000","Experience":"2 Year","Age":"25","Gender":"Male"}
-{"Name":"Intel","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"700000","Experience":"2 Year","Age":"25","Gender":"Female"}
-{"Name":"Intel","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"600000","Experience":"1 Year","Age":"23","Gender":"Female"}
-{"Name":"Green Hacker","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"600000","Experience":"1 Year","Age":"23","Gender":"Female"}
-{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2Years","Age":"25","Gender":"Female"}
-{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female"}
-{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female"}
-{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female"}
+
+
+
 {"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female","0":"1"}
-{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female","0":"8"}
