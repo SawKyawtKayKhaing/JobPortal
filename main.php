@@ -15,6 +15,7 @@
 <body >
     <h2>Online Job Portal System</h2><br><br>
         <a href="seeker.php"class="btn btn-outline-info" role="button">Job Seeker</a>&nbsp;&nbsp;
+        <a href="register.php" class="btn btn-outline-secondary" role="button">Sign In</a>&nbsp;&nbsp;
          <a href="provider.php" class="btn btn-outline-success" role="button">Job Provider</a>
          <img src="download.jpg" class="float-right" alt="Job Portal" width="800" height="500"> 
          

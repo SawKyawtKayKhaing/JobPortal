@@ -92,12 +92,21 @@
                 <input type="text" name="pos" id="pp">
             </div>
     </div>
+    <div class="form-group row">
+    <label for="gg" class="col-sm-1 col-form-label">Gender:</label>
+        <div class="col-sm-10">
+         <input type="radio" id="gg" name="gender" value="Male">Male
+         <input type="radio" id="gg" name="gender" value="Female">Female
+         </div>
+    </div>
 
     <div class="form-group row">
         <div class="col-sm-10">
             <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
         </div>
     </div>
+    
+
 
     <footer>
   <p>About Job Seeker</p>
@@ -119,12 +128,12 @@
             $skill = $_POST["skill"];
             $experience=$_POST["exp"];
             $position=$_POST["pos"];
+            $gender=$_POST["gender"];
 
-
-            $list=new Seek($name,$phone,$address,$nrc,$email,$city,$education,$skill,$experience,$position);
+            $list=new Seek($name,$phone,$address,$nrc,$email,$city,$education,$skill,$experience,$position,$gender);
             $list->Info();
 
-            $arr=array("Name"=>$list->get_name(),"Phone"=>$list->get_phone(),"Address"=>$list->get_address(),"NRC"=>$list->get_nrc(),"Email"=>$list->get_email(),"City"=>$list->get_city(),"Education"=>$list->get_education(),"Skills"=>$list->get_skill(),"Experiences"=>$list->get_experience(),"Position"=>$list->get_position());
+            $arr=array("Name"=>$list->get_name(),"Phone"=>$list->get_phone(),"Address"=>$list->get_address(),"NRC"=>$list->get_nrc(),"Email"=>$list->get_email(),"City"=>$list->get_city(),"Education"=>$list->get_education(),"Skills"=>$list->get_skill(),"Experiences"=>$list->get_experience(),"Position"=>$list->get_position(),"Gender"=>$list->get_gender());
             $add=json_encode($arr);
             
             $myfile = fopen("seeker.txt", "a") or die("Unable to open file!");

@@ -12,7 +12,8 @@ class Seek
     public $skill;
     public $experience;
     public $position;
-    public function __construct($name,$phone,$address,$nrc,$email,$city,$education,$skill,$experience,$position)
+    public $gender;
+    public function __construct($name,$phone,$address,$nrc,$email,$city,$education,$skill,$experience,$position,$gender)
     {
       $this->name=$name;
       $this->phone=$phone;
@@ -24,6 +25,7 @@ class Seek
       $this->skill=$skill;
       $this->experience=$experience;
       $this->position=$position;
+      $this->gender=$gender;
     }
     function set_name($name)
     {
@@ -65,6 +67,10 @@ class Seek
     {
         $this->position=$position;
     }
+    function set_gender($gender)
+    {
+        $this->gender=$gender;
+    }
     function get_name()
     {
       return $this->name;
@@ -105,9 +111,13 @@ class Seek
     {
        return $this->position;
     }
+    function get_gender()
+    {
+       return $this->gender;
+    }
     public function Info()
     {
-      echo "Name= {$this->name} , Phone= {$this->phone}, Address= {$this->address}, NRC= {$this->nrc}, Email={$this->email},City={$this->city},Education={$this->education},Skills={$this->skill},Experiences={$this->experience},Position={$this->position} ;";
+      echo "Name= {$this->name} , Phone= {$this->phone}, Address= {$this->address}, NRC= {$this->nrc}, Email={$this->email},City={$this->city},Education={$this->education},Skills={$this->skill},Experiences={$this->experience},Position={$this->position} ,Gender={$this->gender};";
     }
 }
 ?>
