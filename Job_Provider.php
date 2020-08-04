@@ -19,7 +19,8 @@ input{
         body{
             background-color: cyan;
             background-image: url('jprovider.jpg');
-
+            background-size:cover;
+            background-repeat:no-repeat;
 
         }
 </style>
@@ -81,6 +82,12 @@ input{
         </label>
     </div><br>
     <div class="form-group row">
+        <label for="ss" class="col-sm-2 col-form-label">sid:</label>
+            <div class="col-sm-10">
+                <input type="text"  name="text" id="ss" placeholder="Enter seekid">
+            </div>
+    </div><br>
+    <div class="form-group row">
         <div class="col-sm-10">
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </div>
@@ -103,12 +110,13 @@ include 'j-Provider.php';
                 $experience = $_POST["experience"];
                 $age = $_POST["age"];
                 $gender = $_POST["gender"];
+                $sid=$_POST["text"];
 
-            $mylist =new Provide($name, $companytype, $city, $jobvacancy, $salary, $experience, $age, $gender);
+            $mylist =new Provide($name, $companytype, $city, $jobvacancy, $salary, $experience, $age, $gender,$sid);
             $mylist->companyInformation();
             $arr = array("Name"=>$mylist->get_name(),"Type of Company"=>$mylist->get_type(),"City"=>$mylist->get_city(),
             "Job Vacanacy"=>$mylist->get_vacancy(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),
-            "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),);
+            "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),$mylist->get_sid());
             $add = json_encode($arr);
 
             $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
@@ -118,13 +126,13 @@ include 'j-Provider.php';
             $servername ="localhost";
             $username = "root";
             $password = "";
-            $dbname = "onlinejobportal";
+            $dbname = "job";
 
             $conn =new mysqli($servername, $username, $password, $dbname);
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  jobportal(Name,TypeOfConpany, City, JobVacancy, Salary, Experience, Age, Gender) VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender')";
+            $sql = "INSERT INTO  provider(name,typeOfCompany, city, job_vacancy, salary, experience, age, gender,sid) VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender','$sid')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";

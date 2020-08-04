@@ -10,8 +10,9 @@ class Provide
     public $salary;
     public $experience;
     public $age;
-    public $gender;                                                                                   
-    public function __construct($name,$companytype,$city,$jobvacancy,$salary,$experience,$age,$gender)
+    public $gender; 
+    public $sid;                                                                                  
+    public function __construct($name,$companytype,$city,$jobvacancy,$salary,$experience,$age,$gender,$sid)
     {
       $this->name=$name;
       $this->companytype=$companytype;
@@ -21,6 +22,7 @@ class Provide
       $this->experience=$experience;
       $this->age=$age;
       $this->gender=$gender;
+      $this->sid=$sid;
     }
     function set_name($name)
     {
@@ -54,6 +56,10 @@ class Provide
     {
       $this->gender=$gender;
     }
+    function set_sid($sid)
+    {
+      $this->sid=$sid;
+    }
     
     function get_name()
     {
@@ -86,6 +92,10 @@ class Provide
     function get_gender()
     {
        return $this->gender;
+    }
+    function get_sid()
+    {
+      return $this->sid;
     }
     public function companyInformation()
     {
