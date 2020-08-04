@@ -113,7 +113,8 @@
 </footer>
 </form>
 
-<?php include 'seekfunction.php';
+<?php include 'seekfunction.php' ;
+
 
         if(isset($_POST['submit']))
         {
@@ -163,6 +164,7 @@
 
             $conn->close();
         }
+    
 
         
               
