@@ -13,11 +13,14 @@ input{
         footer {
         text-align: center;
 
-        background-color: green;
+        background-color: black;
         color: white;
         }
         body{
-            background-color: yellow;
+            background-color: cyan;
+            background-image: url('jprovider.jpg');
+
+
         }
 </style>
 </head>
@@ -121,8 +124,7 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  jobportal(Name,TypeOfCompany, City, JobVacancy, Salary, Experience, Age, Gender)
-            VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender')";
+            $sql = "INSERT INTO  jobportal(Name,TypeOfConpany, City, JobVacancy, Salary, Experience, Age, Gender) VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
