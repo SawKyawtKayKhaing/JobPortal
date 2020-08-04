@@ -13,11 +13,14 @@ input{
         footer {
         text-align: center;
 
-        background-color: green;
+        background-color: black;
         color: white;
         }
         body{
-            background-color: yellow;
+            background-color: cyan;
+            background-image: url('jprovider.jpg');
+            background-repeat: no-repeat;
+
         }
 </style>
 </head>
@@ -88,7 +91,7 @@ input{
 </footer>
 </form> 
 <?php
-include 'jProvider.php';
+include 'j-Provider.php';
 
             if(isset($_POST['submit']))
             {
@@ -108,7 +111,7 @@ include 'jProvider.php';
             "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),);
             $add = json_encode($arr);
 
-            $myfile = fopen("jProvider.txt", "a") or die("Unable to open file!");
+            $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
@@ -121,8 +124,7 @@ include 'jProvider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  jobportal(Name,TypeOfCompany, City, JobVacancy, Salary, Experience, Age, Gender)
-            VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender')";
+            $sql = "INSERT INTO  jobportal(Name,TypeOfConpany, City, JobVacancy, Salary, Experience, Age, Gender) VALUES ('$name', '$companytype', '$city', '$jobvacancy','$salary','$experience','$age','$gender')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
