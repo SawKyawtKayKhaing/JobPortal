@@ -88,7 +88,7 @@ input{
 </footer>
 </form> 
 <?php
-include 'jProvider.php';
+include 'j-Provider.php';
 
             if(isset($_POST['submit']))
             {
@@ -108,7 +108,7 @@ include 'jProvider.php';
             "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),);
             $add = json_encode($arr);
 
-            $myfile = fopen("jProvider.txt", "a") or die("Unable to open file!");
+            $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
