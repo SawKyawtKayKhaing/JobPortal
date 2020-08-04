@@ -19,7 +19,7 @@ input{
         body{
             background-color: cyan;
             background-image: url('jprovider.jpg');
-            background-repeat: no-repeat;
+
 
         }
 </style>
