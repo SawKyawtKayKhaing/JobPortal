@@ -23,7 +23,11 @@ tr:nth-child(odd) {background-color: #f2f2f2;}
 </style>
 </head>
 <body>
-  
+    <?php
+        include 'nav.php';
+    ?>
+    <?php include 'footer.php';
+    ?>
 </body>
 </html>
 <?php

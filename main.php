@@ -24,6 +24,11 @@ function myFunction() {
         <a href="pregister.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
         <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
+<div>
+    <?php 
+        include 'footer.php';
+    ?>
+</div>
          
 </body>
 </html>
