@@ -2,3 +2,8 @@
 
 
 {"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"2 Years","Age":"25","Gender":"Female","0":"1"}
+{"Name":"B&B","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Project Manager","Salary":"700000","Experience":"Professional","Age":"27","Gender":"Female","0":"2"}
+{"Name":"B&B","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Project Manager","Salary":"700000","Experience":"Professional","Age":"27","Gender":"Female","0":"2"}
+{"Name":"B&B","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Project Manager","Salary":"700000","Experience":"2 Years","Age":"27","Gender":"Female","0":"2"}
+{"Name":"Innowave","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Project Manager","Salary":"700000","Experience":"2 Years","Age":"27","Gender":"Female","0":"5"}
+{"Name":"Soft","Type of Company":"IT","City":"Yangon","Job Vacanacy":"Developer","Salary":"300000","Experience":"1 Year","Age":"23","Gender":"Female","0":"4"}

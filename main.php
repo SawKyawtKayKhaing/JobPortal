@@ -21,7 +21,7 @@ function myFunction() {
     <h2>Online Job Portal System</h2><br><br>
         <a href="register.php"class="btn btn-outline-info" role="button">Job Seeker</a>&nbsp;
         <a href="sinfo.php"class="btn btn-outline-secondary" role="button"> Seeker List</a>&nbsp;
-        <a href="Job_Provider.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
+        <a href="pregister.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
         <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
          
