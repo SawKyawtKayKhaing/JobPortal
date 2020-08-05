@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2020 at 12:58 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.2.27
+-- Generation Time: Aug 05, 2020 at 07:37 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `job`
+-- Database: `onlinejobportal`
 --
 
 -- --------------------------------------------------------
@@ -33,18 +32,20 @@ CREATE TABLE `provider` (
   `cname` text NOT NULL,
   `typeOfCompany` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL,
-  `employee_qty` int(11) NOT NULL
+  `employee_qty` int(11) NOT NULL,
+  `gender` varchar(100) NOT NULL,
+  `duedate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `provider`
 --
 
-INSERT INTO `provider` (`pid`, `cname`, `typeOfCompany`, `city`, `employee_qty`) VALUES
-(1, 'Soft Guide', 'IT', 'Yangon', 20),
-(2, 'Myanmar IT', 'IT', 'Yangon', 30),
-(3, 'B&B', 'IT', 'Yangon', 15),
-(4, 'Innowave', 'IT', 'Yangon', 25);
+INSERT INTO `provider` (`pid`, `cname`, `typeOfCompany`, `city`, `employee_qty`, `gender`, `duedate`) VALUES
+(1, 'Soft Guide', 'IT', 'Yangon', 20, '', NULL),
+(2, 'Myanmar IT', 'IT', 'Yangon', 30, '', NULL),
+(3, 'B&B', 'IT', 'Yangon', 15, '', NULL),
+(4, 'Innowave', 'IT', 'Yangon', 25, '', NULL);
 
 --
 -- Indexes for dumped tables
