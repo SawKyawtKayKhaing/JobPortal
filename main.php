@@ -18,12 +18,22 @@ function myFunction() {
     <title>Document</title>
 </head>
 <body style="background-image:url('jobportal.png');background-repeat:no-repeat;background-size:cover;">
+<div>
     <h2>Online Job Portal System</h2><br><br>
         <a href="register.php"class="btn btn-outline-info" role="button">Job Seeker</a>&nbsp;
         <a href="sinfo.php"class="btn btn-outline-secondary" role="button"> Seeker List</a>&nbsp;
         <a href="pregister.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
         <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
-         
+    </div>
+     <div style="margin-bottom:0">   
+    
+    <?php
+     include 'footer.php'
+    ?>
+    <h2 class="text-dark">Welcome From Our Page</h2>
+    </div>
+   
+    
 </body>
 </html>

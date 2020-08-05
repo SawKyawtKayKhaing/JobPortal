@@ -105,7 +105,7 @@
     <?php
      include 'footer.php';
     ?>
-    <p>About Job Seeker</p>
+    <h2 class="text-dark">About Job Seeker</h2>
     </footer>
 
 </form>

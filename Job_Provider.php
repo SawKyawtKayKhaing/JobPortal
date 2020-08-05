@@ -103,7 +103,7 @@ input{
     <?php
      include 'footer.php'
     ?>
-    <p>About Job Provider</p>
+    <h2 class="text-dark">About Job Provider</h2>
     </footer>
 </form> 
 <?php

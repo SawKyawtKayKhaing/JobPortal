@@ -12,6 +12,8 @@
 table {
   border-collapse: collapse;
   width:50%;
+  margin-left:20px;
+  background-color: pink;
 }
 
 th, td {
@@ -19,7 +21,7 @@ th, td {
   padding: 3px;
 }
 
-tr:nth-child(odd) {background-color: #f2f2f2;}
+
 </style>
 </head>
 <body>
