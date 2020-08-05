@@ -101,10 +101,12 @@
     </div>
     
 
-
+    <footer>
     <?php
      include 'footer.php';
     ?>
+    <p>About Job Seeker</p>
+    </footer>
 
 </form>
 </div>

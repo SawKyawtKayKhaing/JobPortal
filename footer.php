@@ -8,9 +8,5 @@
         color: white;
         }
     </style>
-    <body>
-        <footer>
-            <p>About Job Seeker</p>
-        </footer>
-    </body>
+
 </html>
