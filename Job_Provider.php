@@ -25,6 +25,9 @@ input{
 </style>
 </head>
 <body>
+    <?php
+        include 'nav.php';
+    ?>
     <h2>Company Information</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
     <div class="form-group row">
@@ -99,12 +102,15 @@ input{
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
         </div>
     </div>
-    <footer>
+    
     <?php
-     include 'footer.php'
+     include 'footer.php';
     ?>
+<<<<<<< HEAD
     <h2 class="text-dark">About Job Provider</h2>
     </footer>
+=======
+>>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
 </form> 
 <?php
 include 'j-Provider.php';

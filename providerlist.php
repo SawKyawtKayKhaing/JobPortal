@@ -34,6 +34,9 @@
             fclose($myfile);
 
     ?>
+    <?php
+        include 'nav.php';
+    ?>
     <h2>Job Provider List</h2><br>
     <table class="table ">
         <thead >
@@ -60,6 +63,9 @@
                             }
                         echo '</tr>';
                     }
+            ?>
+        </table>
+            <?php include 'footer.php';
             ?>
             </body>
 </html> 

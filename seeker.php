@@ -10,6 +10,10 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        include 'nav.php';
+    ?>
+    
     <div class="container">
     <h2>CV Form</h2>
     <img src="job-portal.jpg" class="float-right" alt="Job Seeker" width="600" height="500"> 
@@ -100,6 +104,7 @@
         </div>
     </div>
     
+<<<<<<< HEAD
 
     <footer>
     <?php
@@ -108,8 +113,14 @@
     <h2 class="text-dark">About Job Seeker</h2>
     </footer>
 
+=======
+    
+>>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
 </form>
 </div>
+<?php
+     include 'footer.php';
+    ?>
 <?php include 'seekfunction.php' ;
 
 
