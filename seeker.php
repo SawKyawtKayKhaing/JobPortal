@@ -8,14 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Document</title>
-    <style>
-        footer {
-        text-align: center;
-       
-        background-color: DarkSalmon;
-        color: white;
-        }
-</style>
 </head>
 <body>
     <div class="container">
@@ -110,9 +102,9 @@
     
 
 
-    <footer>
-  <p>About Job Seeker</p>
-</footer>
+    <?php
+     include 'footer.php';
+    ?>
 
 </form>
 </div>

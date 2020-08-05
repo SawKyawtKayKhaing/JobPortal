@@ -15,12 +15,6 @@ input{
 <body>
 
     <style>
-        footer {
-        text-align: center;
-
-        background-color: black;
-        color: white;
-        }
         body{
             background-color: cyan;
             background-image: url('jprovider.jpg');
@@ -98,9 +92,9 @@ input{
         </div>
     </div>
 
-    <footer>
-  <p>About Job Provider</p>
-</footer>
+    <?php
+     include 'footer.php'
+    ?>
 </form> 
 <?php
 include 'j-Provider.php';
