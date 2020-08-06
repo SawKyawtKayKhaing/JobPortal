@@ -25,9 +25,8 @@ function myFunction() {
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
         <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
 <div>
-    <?php 
-        include 'footer.php';
-    ?>
+<?php include 'footer.php';
+?>
 </div>
          
 </body>

@@ -154,7 +154,5 @@ include 'j-Provider.php';
             $conn->close();
             }
          ?>
-
-
 </body>
 </html>

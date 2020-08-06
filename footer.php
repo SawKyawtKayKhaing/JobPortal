@@ -14,8 +14,8 @@
     </style>
     <body>
         <div class="footer">
-            <h5>Welcome From Our Page</h5>
-            <p>This is Online Job Portal System</p>            
+            Welcome From Our Page<br>
+            This is Online Job Portal System            
         </div>
     </body>
 </html>
