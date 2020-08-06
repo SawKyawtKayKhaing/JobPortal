@@ -5,17 +5,16 @@
         .footer {
         position:fixed;
         text-align: center;
-        background-color: DarkSalmon;
-<<<<<<< HEAD
+        background-color:rgba(255, 99, 71, 0.4);
+
         color: white;
         left:0;
         margin-bottom:0;
-=======
         color: black;
         bottom:0;
         left:0;
         width:100%;        
->>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
+
         }
     </style>
     <body>

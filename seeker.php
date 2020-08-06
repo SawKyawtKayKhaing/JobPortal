@@ -103,19 +103,8 @@
             <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
         </div>
     </div>
-    
-<<<<<<< HEAD
-
-    <footer>
-    <?php
-     include 'footer.php';
-    ?>
-    <h2 class="text-dark">About Job Seeker</h2>
-    </footer>
-
-=======
-    
->>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
+        
+        
 </form>
 </div>
 <?php

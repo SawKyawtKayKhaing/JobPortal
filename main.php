@@ -7,14 +7,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script>
-function myFunction() {
-  alert("Welcome! This is new employee list");
-}
+<script>
+        function myFunction()
+        {
+        alert("Welcome! This is new employee list");
+        }
 </script>
 
     
-</head>
+
     <title>Document</title>
 </head>
 <body style="background-image:url('jobportal.png');background-repeat:no-repeat;background-size:cover;">
@@ -25,24 +26,15 @@ function myFunction() {
         <a href="pregister.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
         <a href="foundation.php"class="btn btn-outline-danger" role="button" onclick="myFunction()">Apply</a>
-<<<<<<< HEAD
+
     </div>
-     <div style="margin-bottom:0">   
-    
-    <?php
-     include 'footer.php'
-    ?>
-    <h2 class="text-dark">Welcome From Our Page</h2>
-    </div>
-   
-    
-=======
-<div>
+     
+    <div>
     <?php 
         include 'footer.php';
     ?>
-</div>
+    </div>
          
->>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
+
 </body>
 </html>

@@ -92,11 +92,12 @@ input{
         </label>
     </div><br>
     <div class="form-group row">
-        <label for="ss" class="col-sm-2 col-form-label">sid:</label>
+        <label for="dd" class="col-sm-2 col-form-label">Due Date:</label>
             <div class="col-sm-10">
-                <input type="text"  name="text" id="ss" placeholder="Enter seekid">
+                <input type="date"  name="due" id="dd" placeholder="Enter Date">
             </div>
     </div><br>
+    
     <div class="form-group row">
         <div class="col-sm-10">
             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
@@ -106,11 +107,8 @@ input{
     <?php
      include 'footer.php';
     ?>
-<<<<<<< HEAD
-    <h2 class="text-dark">About Job Provider</h2>
-    </footer>
-=======
->>>>>>> a08c7ab0240a6b7ae20de69430c30162011d3d75
+
+    
 </form> 
 <?php
 include 'j-Provider.php';
@@ -122,17 +120,17 @@ include 'j-Provider.php';
                 $city = $_POST["city"];
                 $qty=$_POST["qty"];
                 $jobvacancy = $_POST["jobvacancy"];
-                $salary = $_POST["salary"];
                 $experience = $_POST["experience"];
+                $salary = $_POST["salary"];
                 $age = $_POST["age"];
                 $gender = $_POST["gender"];
-                $sid=$_POST["text"];
-
-            $mylist =new Provide($name, $companytype, $city,$qty, $jobvacancy, $salary, $experience, $age, $gender,$sid);
+                $duedate=$_POST["due"];
+                
+            $mylist =new Provide($name, $companytype, $city,$qty, $jobvacancy,$experience, $salary, $age, $gender,$duedate);
             $mylist->companyInformation();
             $arr = array("Name"=>$mylist->get_name(),"Type of Company"=>$mylist->get_type(),"City"=>$mylist->get_city(),"Employee_qty"=>$mylist->get_qty(),
-            "Job Vacanacy"=>$mylist->get_vacancy(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),
-            "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),$mylist->get_sid());
+            "Job Vacanacy"=>$mylist->get_vacancy(),"Experience"=>$mylist->get_experience(),"Salary"=>$mylist->get_salary(),
+            "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),"DueDate"=>$mylist->get_duedate());
             $add = json_encode($arr);
 
             $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
@@ -148,7 +146,7 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, salary, experience, age, gender,sid) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$salary','$experience','$age','$gender','$sid')";
+            $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, experience,salary, age, gender,duedate) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$experience','$salary','$age','$gender','$duedate')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";

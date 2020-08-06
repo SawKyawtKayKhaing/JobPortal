@@ -6,23 +6,25 @@ class Provide
     public $name;
     public $companytype;
     public $city;
+    public $qty;
     public $jobvacancy;
     public $salary;
     public $experience;
     public $age;
     public $gender; 
-    public $sid;                                                                                  
-    public function __construct($name,$companytype,$city,$jobvacancy,$salary,$experience,$age,$gender,$sid)
+    public $duedate;                                                                                  
+    public function __construct($name,$companytype,$city,$qty,$jobvacancy,$salary,$experience,$age,$gender,$duedate)
     {
       $this->name=$name;
       $this->companytype=$companytype;
       $this->city=$city;
+      $this->qty=$qty;
       $this->jobvacancy=$jobvacancy;
       $this->salary=$salary;
       $this->experience=$experience;
       $this->age=$age;
       $this->gender=$gender;
-      $this->sid=$sid;
+      $this->duedate=$duedate;
     }
     function set_name($name)
     {
@@ -35,6 +37,10 @@ class Provide
     function set_city($city)
     {
         $this->city=$city;
+    }
+    function set_qty($qty)
+    {
+        $this->qty=$qty;
     }
     function set_jobvacancy($jobvacancy)
     {
@@ -56,10 +62,11 @@ class Provide
     {
       $this->gender=$gender;
     }
-    function set_sid($sid)
+    function set_duedate($duedate)
     {
-      $this->sid=$sid;
+      $this->duedate=$duedate;
     }
+    
     
     function get_name()
     {
@@ -73,17 +80,23 @@ class Provide
     {
        return $this->city;
     }
+    function get_qty()
+    {
+       return $this->qty;
+    }
+
     function get_vacancy()
     {
       return $this->jobvacancy;
     }
-    function get_salary()
-    {
-       return $this->salary;
-    }
+    
     function get_experience()
     {
        return $this->experience;
+    }
+    function get_salary()
+    {
+       return $this->salary;
     }
     function get_age()
     {
@@ -93,14 +106,14 @@ class Provide
     {
        return $this->gender;
     }
-    function get_sid()
+    function get_duedate()
     {
-      return $this->sid;
+      return $this->duedate;
     }
     public function companyInformation()
     {
-      echo "Name= {$this->name} , TypeOfCompany= {$this->companytype}, City= {$this->city}, JobVacancy= {$this->jobvacancy}, 
-      Salary={$this->salary},Experience={$this->experience},Age={$this->age},Gender={$this->gender};";
+      echo "Name= {$this->name} , TypeOfCompany= {$this->companytype}, City= {$this->city},Employee Qty={$this->qty}, JobVacancy= {$this->jobvacancy}, 
+      Salary={$this->salary},Experience={$this->experience},Age={$this->age},Gender={$this->gender},Duedate={$this->duedate};";
     }
 }
 ?> 
