@@ -24,7 +24,7 @@ function myFunction() {
         <a href="sinfo.php"class="btn btn-outline-secondary" role="button"> Seeker List</a>&nbsp;
         <a href="pregister.php" class="btn btn-outline-success" role="button">Job Provider</a>&nbsp;
         <a href="providerlist.php"class="btn btn-outline-primary" role="button"> Company List</a>&nbsp;
-        <a href="foundation.php"class="btn btn-outline-dark" role="button" onclick="myFunction()">Apply</a>
+        <a href="foundation.php"class="btn btn-outline-danger" role="button" onclick="myFunction()">Apply</a>
 <<<<<<< HEAD
     </div>
      <div style="margin-bottom:0">   

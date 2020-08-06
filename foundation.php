@@ -43,14 +43,14 @@ if ($conn->connect_error) {
   die("Connection Error");
 }
 
-$sql = "SELECT applyjob.jid, seeker.name, provider.cname,seeker.gender FROM ((applyjob INNER JOIN seeker ON applyjob.seekerid = seeker.id) INNER JOIN provider ON applyjob.provider_id = provider.pid)";
-echo "<table><thead><tr ><th>Id</th><th>Seeker Name</th><th>Company Name</th><th>Gender</th></tr></thead><tbody>";
+$sql = "SELECT applyjob.jid, seeker.name, provider.cname,seeker.position,seeker.city,seeker.gender FROM ((applyjob INNER JOIN seeker ON applyjob.seekerid = seeker.id) INNER JOIN provider ON applyjob.provider_id = provider.pid)";
+echo "<table><thead><tr ><th>Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>City</th><th>Gender</th></tr></thead><tbody>";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr>"."<td>". $row["jid"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["cname"]."</td>"."<td>".$row["gender"]."</td>"."</tr>"."<br>";
+    echo "<tr>"."<td>". $row["jid"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["cname"]."</td>"."<td>".$row["position"]."</td>"."<td>".$row["city"]."</td>"."<td>".$row["gender"]."</td>"."</tr>"."<br>";
     
   
   }
