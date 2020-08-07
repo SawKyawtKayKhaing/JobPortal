@@ -42,14 +42,11 @@
         <thead >
             <tr class="table-success">
             <th>Name</th>
-            <th>Type of Company</th>
-            <th>City</th>
-            <th>Employee Qty</th>
-            <th>Job Vacancy</th>
             <th>Salary</th>
             <th>Experience</th>
             <th>Age</th>
             <th>Gender</th>
+            <th>City</th>
             <th>Duedate</th>
             </tr>
         </thead>

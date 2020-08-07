@@ -61,7 +61,7 @@ input{
             include 'footer.php';
         ?>
 <?php
-include 'j-Provider.php';
+include 'companyfun.php';
 
             if(isset($_POST['submit']))
             {
@@ -72,12 +72,7 @@ include 'j-Provider.php';
             $mylist =new Provide($name, $companytype,$qty);
             $mylist->companyInformation();
             $arr = array("Name"=>$mylist->get_name(),"Type of Company"=>$mylist->get_type(),"Employee_qty"=>$mylist->get_qty());
-            $add = json_encode($arr);
-
-            $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
-            fwrite($myfile, $add."\n");
-            fclose($myfile);
-
+            
             $servername ="localhost";
             $username = "root";
             $password = "";
@@ -87,7 +82,7 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  provider(name,typeOfCompany,employee_qty) VALUES ('$name', '$companytype','$qty')";
+            $sql = "INSERT INTO  company(cname,typeOfCompany,employee_qty) VALUES ('$name', '$companytype','$qty')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";

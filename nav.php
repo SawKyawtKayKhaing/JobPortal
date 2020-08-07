@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-sm bg-info text-dark">
         
         <a href="register.php" class="btn btn-outline-danger" role="button">Job Seeker</a>&nbsp;&nbsp;
-        <a href="sinfo.php" class="btn btn-outline-danger" role="button"> Seeker List</a>&nbsp;&nbsp;
+        <a href="Company.php" class="btn btn-outline-danger" role="button"> About Company</a>&nbsp;&nbsp;
         <a href="pregister.php" class="btn btn-outline-danger" role="button">Job Provider</a>&nbsp;&nbsp;
         <a href="providerlist.php" class="btn btn-outline-danger" role="button"> Company List</a>&nbsp;&nbsp;
         <a href="foundation.php"class="btn btn-outline-danger" role="button" onclick="myFunction()">Apply</a>          
