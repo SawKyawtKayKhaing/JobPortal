@@ -137,15 +137,8 @@ include 'j-Provider.php';
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
-            $servername ="localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "job";
-
-            $conn =new mysqli($servername, $username, $password, $dbname);
-            if($conn->connect_error){
-                die("Connection failed: " . $conn->connect_error);
-            }
+            include 'database.php';
+            
             $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, experience,salary, age, gender,duedate) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$experience','$salary','$age','$gender','$duedate')";
 
                 if ($conn->query($sql) === TRUE) {

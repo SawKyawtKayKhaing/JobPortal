@@ -35,9 +35,11 @@ th, td {
 <?php
 include 'database.php';
 // Check connection
+if ($conn->connect_error) {
+  die("Connection Error");
+}
 
-
-$sql = "SELECT seeker.sid, seeker.name, company.cname,seeker.position,apply.Apply_date,seeker.city,seeker.gender,company.duedate FROM seeker join company join apply on seeker.sid=apply.seekid and company.pid=apply.cid";
+$sql="UPDATE Seeker SET phone=09267744315 WHERE id=1";
 echo "<table><thead><tr ><th>Seeker Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>Apply Date</th><th>City</th><th>Gender</th><th>Duedate</th></tr></thead><tbody>";
 
 $result = $conn->query($sql);

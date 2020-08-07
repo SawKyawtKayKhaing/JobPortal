@@ -44,12 +44,13 @@
             <th>Name</th>
             <th>Type of Company</th>
             <th>City</th>
+            <th>Qty</th>
             <th>Job Vacancy</th>
             <th>Salary</th>
             <th>Experience</th>
             <th>Age</th>
             <th>Gender</th>
-            <th>SeekId</th>
+            <th>Due Date</th>
             </tr>
         </thead>
         <tbody>
@@ -64,6 +65,7 @@
                         echo '</tr>';
                     }
             ?>
+        </tbody>
         </table>
             <?php include 'footer.php';
             ?>

@@ -106,16 +106,14 @@
         
         
 </form>
-</div>
 <?php
      include 'footer.php';
     ?>
+</div>
+
 <?php include 'seekfunction.php' ;
-
-
         if(isset($_POST['submit']))
-        {
-        
+        {        
             $name =$_POST["name"];
             $phone = $_POST["phone"];
             $address=$_POST["add"];
@@ -127,7 +125,6 @@
             $experience=$_POST["exp"];
             $position=$_POST["pos"];
             $gender=$_POST["gender"];
-
             $list=new Seek($name,$phone,$address,$nrc,$email,$city,$education,$skill,$experience,$position,$gender);
             $list->Info();
 
@@ -138,17 +135,7 @@
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "job";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-            }
+            include 'database.php';            
 
             $sql = "INSERT INTO seeker (name, phone,address,nrc,email,city,education,skill,experience,position,gender)
             VALUES ('$name', '$phone', '$address','$nrc','$email','$city','$education','$skill','$experience','$position','$gender')";
@@ -160,15 +147,7 @@
             }
 
             $conn->close();
-        }
-    
-
-        
-              
-    ?>
-
-
-        
-
+        }  
+    ?>   
 </body>
 </html>

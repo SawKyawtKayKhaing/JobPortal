@@ -1,1 +1,2 @@
-{"Name":"Green ","Type of Company":"IT","City":"Yangon","Employee_qty":"20","Job Vacanacy":"Web Designer","Experience":"300000","Salary":"2 Years","Age":"23","Gender":"Male","DueDate":"2020-10-06"}
+{"Name":"Than Mar Htay","Type of Company":"IT","City":"Yangon","Employee_qty":"12","Job Vacanacy":"Developer","Experience":"200000","Salary":"1 Year","Age":"22","Gender":"Female","DueDate":"2020-08-30"}
+{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Employee_qty":"12","Job Vacanacy":"Developer","Experience":"200000","Salary":"2 Years","Age":"22","Gender":"Male","DueDate":"2020-08-31"}
