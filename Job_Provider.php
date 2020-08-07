@@ -110,6 +110,7 @@ include 'j-Provider.php';
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
+<<<<<<< HEAD
             $servername ="localhost";
             $username = "root";
             $password = "";
@@ -120,6 +121,11 @@ include 'j-Provider.php';
                 die("Connection failed: " . $conn->connect_error);
             }
             $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,city,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$city','$duedate')";
+=======
+            include 'database.php';
+            
+            $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, experience,salary, age, gender,duedate) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$experience','$salary','$age','$gender','$duedate')";
+>>>>>>> 5a794c805fe0c4e50f8ad1e91bb4445dc9b64d75
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";

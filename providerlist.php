@@ -42,12 +42,22 @@
         <thead >
             <tr class="table-success">
             <th>Name</th>
+
+            <th>Type of Company</th>
+            <th>City</th>
+            <th>Qty</th>
+            <th>Job Vacancy</th>
+
             <th>Salary</th>
             <th>Experience</th>
             <th>Age</th>
             <th>Gender</th>
+<<<<<<< HEAD
             <th>City</th>
             <th>Duedate</th>
+=======
+            <th>Due Date</th>
+>>>>>>> 5a794c805fe0c4e50f8ad1e91bb4445dc9b64d75
             </tr>
         </thead>
         <tbody>
@@ -62,6 +72,7 @@
                         echo '</tr>';
                     }
             ?>
+        </tbody>
         </table>
             <?php include 'footer.php';
             ?>

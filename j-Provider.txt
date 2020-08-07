@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 
 {"Name":"Project Manager","Salary":"700000","Experience":"3 Years","Age":"27","Gender":"Female","City":"Yangon","DueDate":"2020-10-07"}
+=======
+{"Name":"Than Mar Htay","Type of Company":"IT","City":"Yangon","Employee_qty":"12","Job Vacanacy":"Developer","Experience":"200000","Salary":"1 Year","Age":"22","Gender":"Female","DueDate":"2020-08-30"}
+{"Name":"Myanmar IT","Type of Company":"IT","City":"Yangon","Employee_qty":"12","Job Vacanacy":"Developer","Experience":"200000","Salary":"2 Years","Age":"22","Gender":"Male","DueDate":"2020-08-31"}
+>>>>>>> 5a794c805fe0c4e50f8ad1e91bb4445dc9b64d75
