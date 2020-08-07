@@ -63,6 +63,12 @@ input{
         <input type="radio"  name="gender" value="Other">Other
         </label>
     </div><br>
+
+    <div class="form-group row">
+        <label for="exp" class="col-sm-2 col-form-label">City:</label>
+            <div class="col-sm-10">
+            <input type="text" name="city" id="salary"  placeholder="Enter City" >   
+    </div><br>
     <div class="form-group row">
         <label for="dd" class="col-sm-2 col-form-label">Due Date:</label>
             <div class="col-sm-10">
@@ -92,11 +98,12 @@ include 'j-Provider.php';
                 $experience = $_POST["experience"];
                 $age = $_POST["age"];
                 $gender = $_POST["gender"];
+                $city=$_POST["city"];
                 $duedate=$_POST["due"];
                 
-            $mylist =new Provide($name, $salary,$experience, $age, $gender,$duedate);
+            $mylist =new Provide($name, $salary,$experience, $age, $gender,$city,$duedate);
             $mylist->companyInformation();
-            $arr = array("Name"=>$mylist->get_name(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),"Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),"DueDate"=>$mylist->get_duedate());
+            $arr = array("Name"=>$mylist->get_name(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),"Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(), "City"=>$mylist->get_city(),"DueDate"=>$mylist->get_duedate());
             $add = json_encode($arr);
 
             $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
@@ -112,7 +119,7 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$duedate')";
+            $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,city,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$city','$duedate')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
