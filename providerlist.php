@@ -44,12 +44,13 @@
             <th>Name</th>
             <th>Type of Company</th>
             <th>City</th>
+            <th>Employee Qty</th>
             <th>Job Vacancy</th>
             <th>Salary</th>
             <th>Experience</th>
             <th>Age</th>
             <th>Gender</th>
-            <th>SeekId</th>
+            <th>Duedate</th>
             </tr>
         </thead>
         <tbody>

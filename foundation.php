@@ -42,15 +42,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection Error");
 }
-
-$sql = "SELECT seeker.id, seeker.name, provider.cname,seeker.position,applyjob.Apply_date,seeker.city,seeker.gender,provider.duedate FROM ((applyjob INNER JOIN seeker ON applyjob.seekerid = seeker.id) INNER JOIN provider ON applyjob.provider_id = provider.pid)";
-echo "<table><thead><tr ><th>Seeker Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>Apply Date</th><th>City</th><th>Gender</th><th>Duedate</th></tr></thead><tbody>";
+$sql="SELECT seeker.name,provider.pname,seeker.position,applyjob.Apply_date,seeker.city,seeker.gender,provider.pduedate FROM seeker join applyjob join provider where seeker.id=applyjob.sid and applyjob.provider_id=provider.pid and seeker.position=provider.pjob_vacancy and seeker.experience=provider.pexperience and seeker.gender=provider.pgender;";
+echo "<table><thead><tr ><th>Seeker Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>ApplyDate</th><th>City</th><th>Gender</th><th>Duedate</th></tr></thead><tbody>";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr>"."<td>". $row["id"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["cname"]."</td>"."<td>".$row["position"]."</td>"."<td>".$row["Apply_date"]."</td>"."<td>".$row["city"]."</td>"."<td>".$row["gender"]."</td>"."<td>".$row["duedate"]."</td>"."</tr>"."<br>";
+    echo "<tr>"."<td>". $row["id"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["pname"]."</td>"."<td>".$row["position"]."</td>"."<td>".$row["Apply_date"]."</td>"."<td>".$row["city"]."</td>"."<td>".$row["gender"]."</td>"."<td>".$row["pduedate"]."</td>"."</tr>"."<br>";
     
   
   }

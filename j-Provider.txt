@@ -1,1 +1,2 @@
 {"Name":"Green ","Type of Company":"IT","City":"Yangon","Employee_qty":"20","Job Vacanacy":"Web Designer","Experience":"300000","Salary":"2 Years","Age":"23","Gender":"Male","DueDate":"2020-10-06"}
+{"Name":"Web Designer","Salary":"300000","Experience":"1 Year","Age":"25","Gender":"Male","DueDate":"2020-10-07"}

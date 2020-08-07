@@ -31,41 +31,13 @@ input{
     <h2>Company Information</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
     <div class="form-group row">
-        <label for="uname" class="col-sm-2 col-form-label">Name:</label>
+        <label for="uname" class="col-sm-2 col-form-label"> Job Name:</label>
             <div class="col-sm-10">
                 <input type="text"  name="name" id="uname" placeholder="Enter Name">
             </div>
     </div><br>
 
-    <div class="form-group row">
-        <label for="type" class="col-sm-2 col-form-label">Type of Company:</label>
-            <div class="col-sm-10">
-                <input type="text" name="companytype" id="type" placeholder="Enter Type of Company">
-
-            </div>
-    </div><br>
-
-    <div class="form-group row">
-        <label for="city" class="col-sm-2 col-form-label">City:</label>
-            <div class="col-sm-10">
-                <input type="text" name="city" id="city"  placeholder="Enter city">
-
-            </div>
-    </div><br>
-
-    <div class="form-group row">
-        <label for="qty" class="col-sm-2 col-form-label">Employee Qty:</label>
-            <div class="col-sm-10">
-                <input type="text" name="qty" id="qty"  placeholder="Enter employee qty">
-
-            </div>
-    </div><br>
-    <div class="form-group row">
-        <label for="job" class="col-sm-2 col-form-label">Job Vacancy:</label>
-            <div class="col-sm-10">
-                <input type="text" name="jobvacancy" id="job"  placeholder="Enter Job Vacancy">
-            </div>
-    </div><br>
+    
     <div class="form-group row">
         <label for="salary" class="col-sm-2 col-form-label">Salary:</label>
             <div class="col-sm-10">
@@ -116,21 +88,15 @@ include 'j-Provider.php';
             if(isset($_POST['submit']))
             {
                 $name = $_POST["name"];
-                $companytype = $_POST["companytype"];
-                $city = $_POST["city"];
-                $qty=$_POST["qty"];
-                $jobvacancy = $_POST["jobvacancy"];
-                $experience = $_POST["experience"];
                 $salary = $_POST["salary"];
+                $experience = $_POST["experience"];
                 $age = $_POST["age"];
                 $gender = $_POST["gender"];
                 $duedate=$_POST["due"];
                 
-            $mylist =new Provide($name, $companytype, $city,$qty, $jobvacancy,$experience, $salary, $age, $gender,$duedate);
+            $mylist =new Provide($name, $salary,$experience, $age, $gender,$duedate);
             $mylist->companyInformation();
-            $arr = array("Name"=>$mylist->get_name(),"Type of Company"=>$mylist->get_type(),"City"=>$mylist->get_city(),"Employee_qty"=>$mylist->get_qty(),
-            "Job Vacanacy"=>$mylist->get_vacancy(),"Experience"=>$mylist->get_experience(),"Salary"=>$mylist->get_salary(),
-            "Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),"DueDate"=>$mylist->get_duedate());
+            $arr = array("Name"=>$mylist->get_name(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),"Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(),"DueDate"=>$mylist->get_duedate());
             $add = json_encode($arr);
 
             $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
@@ -146,7 +112,7 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, experience,salary, age, gender,duedate) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$experience','$salary','$age','$gender','$duedate')";
+            $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$duedate')";
 
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
