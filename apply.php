@@ -87,12 +87,7 @@ input{
             //$result=new Apply($date,$pid,$sid);
             //$result->Info();
             $arr=array("Apply Date"=>$date,"Pid"=>$pid,"Sid"=>$sid);
-            $sub=json_encode($arr);
-
-            $myfile=fopen("applied.txt","a");
-            fwrite($myfile,$sub."\n");
-            fclose($myfile);
-
+            
             
     $servername = "localhost";
     $username = "root";
@@ -103,7 +98,7 @@ input{
         die("Connection failed: " . $conn->connect_error);
     }
 
-            $sql="INSERT INTO apply(Apply_date,cid,seekid)VALUES ('$date','$pid','$sid')";
+            $sql="INSERT INTO applyjob(sid,provider_id,Apply_date)VALUES ('$date','$pid','$sid')";
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
                 } else {

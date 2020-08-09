@@ -17,7 +17,7 @@ input{
     <style>
         body{
             background-color: cyan;
-            background-image: url('jprovider.jpg');
+            background-image: url('jobprovider.jpg');
             background-size:cover;
             background-repeat:no-repeat;
 

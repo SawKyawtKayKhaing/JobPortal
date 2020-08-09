@@ -6,88 +6,112 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-input{
-    margin-left: 10px;
-}
-</style>
-</head>
-<body>
 
     <style>
         body{
             background-color: cyan;
-            background-image: url('jprovider.jpg');
+            background-image: url('Sales-Jobs.jpg');
             background-size:cover;
             background-repeat:no-repeat;
-
+           
         }
+        input{
+    margin-left: 10px;
+}
+
+       
 </style>
 </head>
 <body>
     <?php
         include 'nav.php';
+        include 'database.php';
+        $sql="SELECT * FROM company";
+        
+        $seeker=array();
+        
+
+        if($result=$conn->query($sql)){
+            while($row=$result->fetch_array(MYSQLI_ASSOC)){
+                $seeker[]=$row;
+            }
+        }
     ?>
+    
+    <div class="container">
     <h2>Company Information</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-    <div class="form-group row">
-        <label for="uname" class="col-sm-2 col-form-label"> Job Name:</label>
-            <div class="col-sm-10">
-                <input type="text"  name="name" id="uname" placeholder="Enter Name">
-            </div>
-    </div><br>
+     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+                            <div class="form-group">
+                                <label for="uname" class="form-label"> Job Name:</label>&nbsp;&nbsp;&nbsp;
+                                    <input type="text"  name="name" id="uname" placeholder="Enter Name">
+                            </div><br>
 
-    
-    <div class="form-group row">
-        <label for="salary" class="col-sm-2 col-form-label">Salary:</label>
-            <div class="col-sm-10">
-                <input type="text" name="salary" id="salary"  placeholder="Enter Salary" >
-            </div>
-    </div><br>
-    <div class="form-group row">
-        <label for="exp" class="col-sm-2 col-form-label">Experience:</label>
-            <div class="col-sm-10">
-                <textarea name="experience" id="exp" ></textarea>
-            </div>
-    </div><br>
-    <div class="form-group row">
-        <label for="age" class="col-sm-2 col-form-label">Age:</label>
-            <div class="col-sm-10">
-                <input type="text"  name="age" id="age" placeholder="Enter Age">
-            </div>
-    </div><br>
-    <div class="form-check">
-        <label class="form-check-label">Gender:
-        <input type="radio" name="gender" value="Male">Male
-        <input type="radio"  name="gender" value="Female">Female
-        <input type="radio"  name="gender" value="Other">Other
-        </label>
-    </div><br>
+                            
+                            <div class="form-group">
+                                <label for="salary" class="form-label">Salary:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                              
+                                     <input type="text" name="salary" id="salary"  placeholder="Enter Salary" >                                   
+                            </div><br>
 
-    <div class="form-group row">
-        <label for="exp" class="col-sm-2 col-form-label">City:</label>
-            <div class="col-sm-10">
-            <input type="text" name="city" id="salary"  placeholder="Enter City" >   
-    </div><br>
-    <div class="form-group row">
-        <label for="dd" class="col-sm-2 col-form-label">Due Date:</label>
-            <div class="col-sm-10">
-                <input type="date"  name="due" id="dd" placeholder="Enter Date">
-            </div>
-    </div><br>
-    
-    <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-        </div>
-    </div>
-    
-    <?php
-     include 'footer.php';
-    ?>
+                            <div class="form-group">
+                                <label for="exp" class="form-label">Experience:</label>&nbsp;&nbsp;
+                                    
+                                        <textarea name="experience" id="exp" ></textarea>
+                                   
+                            </div><br>
 
-    
-</form> 
+                            <div class="form-group">
+                                <label for="age" class="form-label">Age:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    
+                                        <input type="text"  name="age" id="age" placeholder="Enter Age">
+                                   
+                            </div><br>
+
+                            <div class="form-group">
+                           
+                                <label class="form-check-label">Gender:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gender" value="Male">Male
+                                <input type="radio"  name="gender" value="Female">Female
+                              
+                            </div><br>
+
+                            <div class="form-group">
+                                <label for="exp" class="form-label">City:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   
+                                    <input type="text" name="city" id="salary"  placeholder="Enter City" >   
+                            </div><br>
+
+                            <div class="form-group">
+                                <label for="dd" class="form-label">Due Date:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                                   
+                                        <input type="date"  name="due" id="dd" placeholder="Enter Date">
+                                  
+                            </div><br>
+
+                            <div class="form-group">
+                                <label for="uname" class="form-label" style="padding:10px;"> CName:</label>&nbsp;&nbsp;
+                             
+                                    <select name="seeker" id="uname" class="form-control-md">
+                                        <?php
+                                            if(count($seeker)>0){
+                                                foreach($seeker as $seek){
+                                                    echo "<option value='".$seek['pid']."'>{$seek['cname']}</option>";
+                                                }
+                                            }else{
+                                                echo "no result";
+                                            }
+                                        ?>
+                                    </select>
+                                
+                            </div><br>
+                            
+                            <div class="form-group">
+                                <div>
+                                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                                </div>
+                            </div>
+    </form> 
+                            
+</div>
 <?php
 include 'j-Provider.php';
 
@@ -100,17 +124,18 @@ include 'j-Provider.php';
                 $gender = $_POST["gender"];
                 $city=$_POST["city"];
                 $duedate=$_POST["due"];
+                $comid=$_POST["seeker"];
                 
-            $mylist =new Provide($name, $salary,$experience, $age, $gender,$city,$duedate);
+            $mylist =new Provide($name, $salary,$experience, $age, $gender,$city,$duedate,$comid);
             $mylist->companyInformation();
-            $arr = array("Name"=>$mylist->get_name(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),"Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(), "City"=>$mylist->get_city(),"DueDate"=>$mylist->get_duedate());
+            $arr = array("Name"=>$mylist->get_name(),"Salary"=>$mylist->get_salary(),"Experience"=>$mylist->get_experience(),"Age"=>$mylist->get_age(),"Gender"=>$mylist->get_gender(), "City"=>$mylist->get_city(),"DueDate"=>$mylist->get_duedate(),"Company"=>$mylist->get_comid());
             $add = json_encode($arr);
 
             $myfile = fopen("j-Provider.txt", "a") or die("Unable to open file!");
             fwrite($myfile, $add."\n");
             fclose($myfile);
 
-<<<<<<< HEAD
+
             $servername ="localhost";
             $username = "root";
             $password = "";
@@ -120,14 +145,8 @@ include 'j-Provider.php';
             if($conn->connect_error){
                 die("Connection failed: " . $conn->connect_error);
             }
-            $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,city,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$city','$duedate')";
-=======
-            include 'database.php';
-            
-            $sql = "INSERT INTO  provider(cname,typeOfCompany, city,employee_qty, job_vacancy, experience,salary, age, gender,duedate) VALUES ('$name', '$companytype', '$city','$qty', '$jobvacancy','$experience','$salary','$age','$gender','$duedate')";
->>>>>>> 5a794c805fe0c4e50f8ad1e91bb4445dc9b64d75
-
-                if ($conn->query($sql) === TRUE) {
+            $sql = "INSERT INTO  jobpost(job_name,salary,experience,age, gender,city,companyid,due_date) VALUES ('$name', '$salary','$experience','$age','$gender','$city','$comid','$duedate')";
+            if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                 } else {
                     echo "Error: " . $sql . "<br>" . $conn->error;

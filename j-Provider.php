@@ -9,8 +9,9 @@ class Provide
     public $age;
     public $gender; 
     public $city;
-    public $duedate;                                                                                  
-    public function __construct($name,$salary,$experience,$age,$gender,$city,$duedate)
+    public $duedate; 
+    public $comid;                                                                                 
+    public function __construct($name,$salary,$experience,$age,$gender,$city,$duedate,$comid)
     {
       $this->name=$name;
       $this->salary=$salary;
@@ -19,6 +20,7 @@ class Provide
       $this->gender=$gender;
       $this->city=$city;
       $this->duedate=$duedate;
+      $this->comid=$comid;
     }
     function set_name($name)
     {
@@ -48,6 +50,10 @@ class Provide
     function set_duedate($duedate)
     {
       $this->duedate=$duedate;
+    }
+    function set_comid($comid)
+    {
+      $this->comid=$comid;
     }
     
     
@@ -80,9 +86,13 @@ class Provide
     {
       return $this->duedate;
     }
+    function get_comid()
+    {
+      return $this->comid;
+    }
     public function companyInformation()
     {
-      echo "Name= {$this->name} ,Salary={$this->salary},Experience={$this->experience},Age={$this->age},Gender={$this->gender},City={$this->city},Duedate={$this->duedate};";
+      echo "Name= {$this->name} ,Salary={$this->salary},Experience={$this->experience},Age={$this->age},Gender={$this->gender},City={$this->city},Duedate={$this->duedate},Company={$this->comid};";
     }
 }
 ?> 
