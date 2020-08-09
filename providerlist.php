@@ -45,12 +45,8 @@
             <th>Type of Company</th>
             <th>City</th>
             <th>Qty</th>
+            <th>Employee Qty</th>
             <th>Job Vacancy</th>
-            <th>Salary</th>
-            <th>Experience</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Due Date</th>
             </tr>
         </thead>
         <tbody>

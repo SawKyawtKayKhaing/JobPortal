@@ -3,7 +3,7 @@
     <title>Footer</title>
     <style>
         .footer {
-        position:fixed;
+        position: fixed;
         text-align: center;
         background-color:rgba(255, 99, 71, 0.4);
 

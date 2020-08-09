@@ -35,16 +35,29 @@ th, td {
 <?php
 include 'database.php';
 // Check connection
+<<<<<<< HEAD
 
 
 $sql = "SELECT seeker.sid, seeker.name, company.cname,seeker.position,apply.Apply_date,seeker.city,seeker.gender,company.duedate FROM seeker join company join apply on seeker.sid=apply.seekid and company.pid=apply.cid";
 echo "<table><thead><tr ><th>Seeker Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>Apply Date</th><th>City</th><th>Gender</th><th>Duedate</th></tr></thead><tbody>";
+=======
+if ($conn->connect_error) {
+  die("Connection Error");
+}
+$sql="SELECT seeker.name,provider.pname,seeker.position,applyjob.Apply_date,seeker.city,seeker.gender,provider.pduedate FROM seeker join applyjob join provider where seeker.id=applyjob.sid and applyjob.provider_id=provider.pid and seeker.position=provider.pjob_vacancy and seeker.experience=provider.pexperience and seeker.gender=provider.pgender;";
+echo "<table><thead><tr ><th>Seeker Id</th><th>Seeker Name</th><th>Company Name</th><th>Position</th><th>ApplyDate</th><th>City</th><th>Gender</th><th>Duedate</th></tr></thead><tbody>";
+$result = $conn->query($sql);
+>>>>>>> 702947763882aaf4a5baaac0b9239550f2e826bc
 
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
+<<<<<<< HEAD
     echo "<tr>"."<td>". $row["sid"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["cname"]."</td>"."<td>".$row["position"]."</td>"."<td>".$row["Apply_date"]."</td>"."<td>".$row["city"]."</td>"."<td>".$row["gender"]."</td>"."<td>".$row["duedate"]."</td>"."</tr>"."<br>";
+=======
+    echo "<tr>"."<td>". $row["id"]. "</td>"."<td>". $row["name"]."</td>". "<td>".$row["pname"]."</td>"."<td>".$row["position"]."</td>"."<td>".$row["Apply_date"]."</td>"."<td>".$row["city"]."</td>"."<td>".$row["gender"]."</td>"."<td>".$row["pduedate"]."</td>"."</tr>"."<br>";
+>>>>>>> 702947763882aaf4a5baaac0b9239550f2e826bc
     
   
   }

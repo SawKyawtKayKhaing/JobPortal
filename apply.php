@@ -20,7 +20,6 @@ input{
             background-image: url('jprovider.jpg');
             background-size:cover;
             background-repeat:no-repeat;
-
         }
 </style>
 </head>
@@ -28,22 +27,19 @@ input{
     <?php
         include 'nav.php';
         include 'database.php';
-        $sql="SELECT * FROM Seeker";
-        
-        $seeker=array();
-        
+        $sql="SELECT * FROM Seeker";        
+        $seeker=array();        
 
         if($result=$conn->query($sql)){
             while($row=$result->fetch_array(MYSQLI_ASSOC)){
                 $seeker[]=$row;
             }
-        }
-    
+        }    
     ?>
     <h2>Company Information</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <div>
-        <label>Apply date:</label>
+        <label class="col-sm-1">Apply date:</label>
         <input type="date" name="date">
     </div><br>
 
@@ -66,34 +62,22 @@ input{
                     }
                 ?>
             </select>
-    </div><br>
-    
+    </div><br>  
     
     <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
-        </div>
+        <button type="submit" class="btn btn-primary" name="submit">Sign in</button>        
     </div>
-    
+    </form>
+
     <?php
         
         if(isset($_POST['submit']))
         {   
             $date=$_POST["date"];
             $pid=$_POST["provider"];
-            $sid=$_POST["seeker"];
-            
-            
+            $sid=$_POST["seeker"];           
             //$result=new Apply($date,$pid,$sid);
-            //$result->Info();
-            $arr=array("Apply Date"=>$date,"Pid"=>$pid,"Sid"=>$sid);
-            $sub=json_encode($arr);
-
-            $myfile=fopen("applied.txt","a");
-            fwrite($myfile,$sub."\n");
-            fclose($myfile);
-
-            
+            //$result->Info();       
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -103,7 +87,7 @@ input{
         die("Connection failed: " . $conn->connect_error);
     }
 
-            $sql="INSERT INTO apply(Apply_date,cid,seekid)VALUES ('$date','$pid','$sid')";
+            $sql="INSERT INTO apply(duedate,cid,seekid)VALUES ('$date','$pid','$sid')";
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
                 } else {
@@ -116,6 +100,6 @@ input{
     <?php
      include 'footer.php';
     ?>    
-</form> 
+ 
 </body>
 </html>
